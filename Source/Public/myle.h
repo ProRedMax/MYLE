@@ -8,7 +8,7 @@
 #include <fstream>
 #include <vector>
 
-class MYLE_EXPORT MYLE
+class MYLE
 {
 public:
     MYLE();
