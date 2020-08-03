@@ -54,6 +54,13 @@ public:
     ///
     std::string IntegerToBinaryString(int& number);
 
+
+    void __swap(int& a, int& b);
+
+    int getMSD(int& i);
+
+    int getDigits(int& i);
+
     } // namespace AdvancedNumberLibrary
 
     namespace FileIO
