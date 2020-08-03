@@ -99,3 +99,21 @@ void MYLE::replaceAll(const int& from, const int& to, const char& toFind, const 
     }
 }
 
+void MYLE::__swap(int& a, int& b)
+{
+    a ^= b; 
+    b ^= a; 
+    a ^= b;
+}
+
+int MYLE::getMSD(int& i)
+{
+    double K = std::log10(i);
+    K -= std::floor(K);
+    return std::pow(10, K);
+}
+
+int MYLE::getDigits(int& i)
+{
+    return std::floor(std::log10(i)) + 1;
+}
