@@ -46,6 +46,7 @@ void MYLE::writeToFile(std::string &path, std::vector<std::string> &content)
     {
         file << line;
     }
+    file.close();
 }
 
 std::vector<std::string> MYLE::readFile(std::string &path)
