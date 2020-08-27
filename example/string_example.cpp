@@ -4,5 +4,5 @@
 
 int main()
 {
-	std::cout << MYLE::randomString(10) << std::endl;
+	std::cout << MYLE::rand_string(10) << std::endl;
 }

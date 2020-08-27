@@ -5,47 +5,48 @@
 #include <stdlib.h>
 #include <fstream>
 #include <vector>
+#include <random>
 
 namespace MYLE {
 
-    std::string randomString(int length, const std::string& charSet)
+    std::string rand_string(int length, const std::string& charSet)
     {
         std::string randomString(length, '0');
         int random;
 
         for (int i = 0; i < length; ++i)
         {
-            random = randomIntegerInRange(0, charSet.size());
+            random = rand_int(0, charSet.size());
             randomString[i] = charSet[random];
         }
 
         return randomString;
     }
 
-    std::string randomString(int length)
+    std::string rand_string(int length)
     {
         std::string charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghhijklmnopqrstuvwxyz";
-        return randomString(length, charSet);
+        return rand_string(length, charSet);
     }
 
-    int randomIntegerInRange(int from, int to)
+    int rand_int(int from, int to)
     {
-        srand(time(0));
+        srand(std::random_device()());
         return rand() % (to - from + 1) + from;
     }
 
-    void writeLineToFile(std::string& path, const std::string& content)
+    void fwrite_line(std::string& filepath, const std::string& content)
     {
         std::ofstream file;
-        file.open(path);
+        file.open(filepath);
         file << content;
         file.close();
     }
 
-    void writeToFile(std::string& path, std::vector<std::string>& content)
+    void fwrite(std::string& filepath, std::vector<std::string>& content)
     {
         std::ofstream file;
-        file.open(path);
+        file.open(filepath);
         for (auto& line : content)
         {
             file << line;
@@ -53,11 +54,11 @@ namespace MYLE {
         file.close();
     }
 
-    std::vector<std::string> readFile(std::string& path)
+    std::vector<std::string> fread(std::string& filepath)
     {
         std::string line;
         std::vector<std::string> output;
-        std::ifstream file(path);
+        std::ifstream file(filepath);
         if (file.is_open())
         {
             while (std::getline(file, line))
@@ -68,7 +69,7 @@ namespace MYLE {
         return output;
     }
 
-    std::string integerToBinaryString(int& number)
+    std::string itobs(int& number)
     {
         int num;
         std::string binary(32, ' ');
@@ -93,7 +94,7 @@ namespace MYLE {
         return binary;
     }
 
-    void replaceAll(const int& from, const int& to, const char& toFind, const char& replaceWith, std::string& __string)
+    void replace_all(const int& from, const int& to, const char& toFind, const char& replaceWith, std::string& __string)
     {
         for (int var = from; var < to; ++var)
         {
@@ -111,14 +112,14 @@ namespace MYLE {
         a ^= b;
     }
 
-    int getMSD(int& i)
+    int msd(int& i)
     {
         double K = std::log10(i);
         K -= std::floor(K);
         return std::pow(10, K);
     }
 
-    int getDigits(int& i)
+    int digits(int& i)
     {
         return std::floor(std::log10(i)) + 1;
     }
