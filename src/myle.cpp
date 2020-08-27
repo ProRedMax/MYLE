@@ -31,8 +31,8 @@ namespace MYLE {
 
     int rand_int(int from, int to)
     {
-        srand(std::random_device()());
-        return rand() % (to - from + 1) + from;
+        std::srand(std::random_device()());
+        return std::rand() % (to - from + 1) + from;
     }
 
     void fwrite_line(std::string& filepath, const std::string& content)
