@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include <random>
+#include <iostream>
 
 namespace MYLE {
 
@@ -122,6 +123,44 @@ namespace MYLE {
     int digits(int& i)
     {
         return std::floor(std::log10(i)) + 1;
+    }
+
+
+
+    int getLuhnSum(std::string number)
+    {
+        int temp, sum = 0;
+        for (unsigned int i = 0; i < number.size(); i++)
+        {
+            temp = number[i] - '0';
+            if ((i + 1) % 2 == 1)
+            {
+                temp *= 2;
+                if (temp > 9) {
+                    temp -= 9;
+                }
+            }
+            sum += temp;
+        }
+        return sum;
+    }
+
+
+    int luhn_checksum(std::string number)
+    {
+        int sum = getLuhnSum(number);
+        if (sum % 10 == 0)
+        {
+            return 0;
+        }
+
+        return 10 - (sum % 10);
+    }
+
+    bool MYLE::luhn(std::string number)
+    {
+        return (getLuhnSum(number.substr(0, number.size() - 1))
+            + std::stoi(number.substr(number.size() - 1))) % 10 == 0;
     }
 
 }
