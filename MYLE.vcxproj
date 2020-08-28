@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="example\string_example.cpp" />
+    <ClCompile Include="luhn.cpp" />
     <ClCompile Include="src\myle.cpp" />
   </ItemGroup>
   <ItemGroup>

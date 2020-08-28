@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-#include <stdexcept>
-
 int main()
 {
 	MYLE::Init();
