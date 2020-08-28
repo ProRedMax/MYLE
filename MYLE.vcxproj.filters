@@ -36,6 +36,9 @@
     <ClInclude Include="include\myle_makro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\myle_benchmark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\myle.cpp">

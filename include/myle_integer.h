@@ -10,7 +10,7 @@ namespace MYLE {
     /// \param to Endindex
     /// \return randomInteger
     ///
-    int rand_int(int from, int to);
+    int rand_int(int from, int to, bool seed = false);
 
     ///
     /// \brief IntegerToBinaryString converts a number into a binary string in the format %32s

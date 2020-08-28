@@ -9,6 +9,11 @@
 
 namespace MYLE {
 
+    void Init()
+    {
+        std::srand(std::random_device()());
+    }
+
     std::string rand_string(int length, const std::string& charSet)
     {
         std::string randomString(length, '0');
@@ -16,8 +21,7 @@ namespace MYLE {
 
         for (int i = 0; i < length; ++i)
         {
-            random = rand_int(0, charSet.size());
-            randomString[i] = charSet[random];
+            randomString[i] = charSet[rand_int(0, charSet.size())];
         }
 
         return randomString;
@@ -29,9 +33,10 @@ namespace MYLE {
         return rand_string(length, charSet);
     }
 
-    int rand_int(int from, int to)
+    int rand_int(int from, int to, bool seed)
     {
-        std::srand(std::random_device()());
+        if(seed) std::srand(std::random_device()());
+
         return std::rand() % (to - from + 1) + from;
     }
 
