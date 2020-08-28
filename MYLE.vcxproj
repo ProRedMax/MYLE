@@ -129,8 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="example\string_example.cpp" />
-    <ClCompile Include="luhn.cpp" />
+    <ClCompile Include="example\luhn_example.cpp" />
     <ClCompile Include="src\myle.cpp" />
   </ItemGroup>
   <ItemGroup>

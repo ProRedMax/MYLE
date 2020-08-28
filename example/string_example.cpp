@@ -1,7 +1,5 @@
 #include <myle.h>
 
-#include <iostream>
-
 int main()
 {
 	MYLE::Init();

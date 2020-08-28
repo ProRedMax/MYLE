@@ -44,10 +44,7 @@
     <ClCompile Include="src\myle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="example\string_example.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="luhn.cpp">
+    <ClCompile Include="example\luhn_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
