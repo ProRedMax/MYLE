@@ -134,11 +134,13 @@ namespace MYLE {
 
     int getLuhnSum(std::string number)
     {
+        int offset = (number.size() % 2 == 0) ? 0 : 1;
+
         int temp, sum = 0;
         for (unsigned int i = 0; i < number.size(); i++)
         {
             temp = number[i] - '0';
-            if ((i + 1) % 2 == 1)
+            if ((i + offset) % 2 == 1)
             {
                 temp *= 2;
                 if (temp > 9) {
@@ -166,6 +168,52 @@ namespace MYLE {
     {
         return (getLuhnSum(number.substr(0, number.size() - 1))
             + std::stoi(number.substr(number.size() - 1))) % 10 == 0;
+    }
+
+    std::string generate_luhn(int length)
+    {
+        int dindex = (length % 2 == 0) ? 0 : 1;
+
+        std::string luhn(length, '0');
+
+        int sum = 0;
+
+        for (int i = 0; i < length; i++)
+        {
+            if (i == length - 1)
+            {
+                int rest = sum % 10;
+
+                if (rest != 0) rest = 10 - rest;
+
+                sum += rest;
+
+                luhn[i] = rest + '0';
+
+                break;
+            }
+
+            int temp = rand_int(0, 9);
+
+            luhn[i] = temp + '0';
+
+            if (i == dindex)
+            {
+                temp *= 2;
+
+                if (temp > 9) temp -= 9;
+
+                sum += temp;
+
+                dindex += 2;
+
+                continue;
+            }
+
+            sum += temp;
+        }
+
+        return luhn;
     }
 
 }

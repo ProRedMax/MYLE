@@ -18,4 +18,6 @@ namespace MYLE {
     /// <returns>Passes luhn</returns>
     bool luhn(std::string number);
 
+    std::string generate_luhn(int size);
+
 }
