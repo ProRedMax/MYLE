@@ -19,5 +19,13 @@ namespace MYLE {
     ///
     std::string rand_string(int length);
 
+    /// <summary>
+    /// Replace certain characters with the given one in a certain range
+    /// </summary>
+    /// <param name="from">Start of the range</param>
+    /// <param name="to">End of the range</param>
+    /// <param name="toFind">Character to find</param>
+    /// <param name="replaceWith">Character to replace with</param>
+    /// <param name="__string">Your string</param>
     void replace_all(const int& from, const int& to, const char& toFind, const char& replaceWith, std::string& __string);
 }
