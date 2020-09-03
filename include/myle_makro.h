@@ -1,7 +1,7 @@
 #pragma once
 
 ///
-/// \brief pass values along without losing the fact that they are l-value or r-value references
+/// \brief Pass values along without losing the fact that they are l-value or r-value references
 ///
 #define MYLE_FWD(...) ::std::forward<decltype(__VA_ARGS__)>(__VA_ARGS__)
 

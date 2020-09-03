@@ -18,6 +18,11 @@ namespace MYLE {
     /// <returns>Passes luhn</returns>
     bool luhn(std::string number);
 
+    /// <summary>
+    /// Generate a number which passes the luhn algorithm
+    /// </summary>
+    /// <param name="size">Size of the number</param>
+    /// <returns>Number in String</returns>
     std::string generate_luhn(int size);
 
 }

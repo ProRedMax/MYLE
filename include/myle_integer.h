@@ -19,10 +19,25 @@ namespace MYLE {
     ///
     std::string itobs(int& number);
 
+    /// <summary>
+    /// Swap 2 numbers
+    /// </summary>
+    /// <param name="a">Number 1</param>
+    /// <param name="b">Number 2</param>
     void __swap(int& a, int& b);
 
+    /// <summary>
+    /// Get the Most Significant Digit
+    /// </summary>
+    /// <param name="i">Number</param>
+    /// <returns>MSD</returns>
     int msd(int& i);
 
+    /// <summary>
+    /// Returns the amount of digits in a number
+    /// </summary>
+    /// <param name="i">Number</param>
+    /// <returns>Amount</returns>
     int digits(int& i);
 
 }
