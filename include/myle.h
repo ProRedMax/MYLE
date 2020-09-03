@@ -11,7 +11,7 @@
 #include "myle_benchmark.h"
 
 //Objects
-#include "../myle_object2d.h"
+#include "myle_object2d.h"
 
 //Other Libraries
 #include <memory>

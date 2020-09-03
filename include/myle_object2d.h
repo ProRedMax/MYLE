@@ -1,64 +1,65 @@
 #pragma once
 #include <iostream>
 #include <myle.h>
-#include "Identifieable.h"
+
+#include "myle_identifieable.h"
 
 namespace MYLE
 {
-	class object2d : public Identifieable
+	class Object2d : public Identifieable
 	{
 	public:
 
-		static int id;
+		static uint32_t id;
 
-		object2d();
+		Object2d();
 
-		object2d(std::string name, std::string description);
+		Object2d(std::string name, std::string description);
 
-		virtual double get_area()
+		virtual double area()
 		{
 			return 0;
 		}
 
-		virtual double get_perimeter()
+		virtual double perimeter()
 		{
 			return 0;
 		}
 
 		std::string to_string();
 
-		inline std::string get_name()
+		inline std::string name()
 		{
-			return name;
+			return m_Name;
 		}
 
-		inline std::string get_description()
+		inline std::string description()
 		{
-			return description;
+			return m_Description;
 		}
 
 		/// <summary>
 		/// Overrides the method from the Identieable Interface
 		/// </summary>
 		/// <returns>mPID</returns>
-		virtual uint32_t get_mPID() override;
+		virtual uint32_t mPID() override;
 
 	private:
 
 		/// <summary>
 		/// Human readable name of the object
 		/// </summary>
-		std::string name;
+		std::string m_Name;
 
 		/// <summary>
 		/// Descriibe your figure
 		/// </summary>
-		std::string description;
+		std::string m_Description;
 
 		/// <summary>
 		/// Myle Public IDentification
 		/// </summary>
-		uint32_t mPID;
+		uint32_t m_MPID;
 
 	};
 
