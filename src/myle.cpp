@@ -139,7 +139,7 @@ namespace MYLE {
         int temp, sum = 0;
         for (unsigned int i = 0; i < number.size(); i++)
         {
-            temp = number[i] - '0';
+            temp = getNumericValue(number[i]);
             if ((i + offset) % 2 == 1)
             {
                 temp *= 2;
@@ -216,4 +216,9 @@ namespace MYLE {
         return luhn;
     }
 
+
+	int getNumericValue(char& c)
+	{
+		return c - '0';
+	}
 }
