@@ -139,6 +139,7 @@
     <ClInclude Include="include\myle_identifieable.h" />
     <ClInclude Include="include\myle.h" />
     <ClInclude Include="include\myle_benchmark.h" />
+    <ClInclude Include="include\myle_init.h" />
     <ClInclude Include="include\myle_makro.h" />
     <ClInclude Include="include\myle_algorithm.h" />
     <ClInclude Include="include\myle_file.h" />

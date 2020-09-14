@@ -1,5 +1,6 @@
 #pragma once
 
+#include <myle.h>
 
 namespace MYLE
 {
@@ -9,10 +10,10 @@ namespace MYLE
 	/// </summary>
 	/// <param name="c">Character</param>
 	/// <returns>Numeric value</returns>
-	int getNumericValue(char & c);
+	int getNumericValue(char& c);
 
 	//TODO
 	//write method
-	
-	
-}
+	MYLE::ECHARACTER_TYPE getCharacterType(char& c);
+
+};

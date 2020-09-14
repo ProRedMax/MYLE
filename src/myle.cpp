@@ -12,7 +12,8 @@ namespace MYLE {
 
     void Init()
     {
-        std::srand(std::random_device()());
+  
+        srand(std::random_device()());
     }
 
     std::string rand_string(int length, const std::string& charSet)
@@ -221,4 +222,4 @@ namespace MYLE {
 	{
 		return c - '0';
 	}
-}
+};

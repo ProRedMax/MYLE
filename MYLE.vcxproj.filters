@@ -69,6 +69,9 @@
     <ClInclude Include="data\myle_data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\myle_init.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\myle.cpp">

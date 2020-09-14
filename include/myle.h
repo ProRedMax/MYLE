@@ -1,6 +1,8 @@
-#pragma once
-
+//Global C-Header
 #include "myle_global.h"
+
+//Init
+#include "myle_init.h"
 
 //Advanced MYLE Library
 #include "myle_string.h"
@@ -17,14 +19,5 @@
 //Other Libraries
 #include <memory>
 
-/// <summary>
-/// Base MYLE Namespace
-/// </summary>
-namespace MYLE {
-
-	/// <summary>
-	/// Initialize the MYLE Library
-	/// </summary>
-	void Init();
-
-}
+//Data
+#include "../data/myle_data.h"

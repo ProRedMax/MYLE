@@ -27,4 +27,4 @@ namespace MYLE {
     ///
     std::vector<std::string> fread(std::string& filepath);
 
-}
+};
