@@ -1,6 +1,6 @@
 #pragma once
 
-#include <myle.h>
+#include "../data/myle_data.h"
 
 namespace MYLE
 {

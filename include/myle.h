@@ -1,3 +1,5 @@
+#pragma once
+
 //Global C-Header
 #include "myle_global.h"
 
