@@ -12,7 +12,6 @@ namespace MYLE {
 
     void Init()
     {
-  
         srand(std::random_device()());
     }
 
@@ -140,7 +139,7 @@ namespace MYLE {
         int temp, sum = 0;
         for (unsigned int i = 0; i < number.size(); i++)
         {
-            temp = getNumericValue(number[i]);
+            temp = numeric_value(number[i]);
             if ((i + offset) % 2 == 1)
             {
                 temp *= 2;
@@ -218,7 +217,7 @@ namespace MYLE {
     }
 
 
-	int getNumericValue(char& c)
+	int numeric_value(char& c)
 	{
 		return c - '0';
 	}

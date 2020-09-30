@@ -1,5 +1,8 @@
 #pragma once
 
+//Other Libraries
+#include <memory>
+
 //Global C-Header
 #include "myle_global.h"
 
@@ -18,8 +21,5 @@
 //Objects
 #include "myle_object2d.h"
 
-//Other Libraries
-#include <memory>
-
 //Data
-#include "../data/myle_data.h"
+#include "myle_data.h"

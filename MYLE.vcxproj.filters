@@ -66,10 +66,10 @@
     <ClInclude Include="include\myle_character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="data\myle_data.h">
+    <ClInclude Include="include\myle_init.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\myle_init.h">
+    <ClInclude Include="include\myle_data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
