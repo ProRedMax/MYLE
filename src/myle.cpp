@@ -217,7 +217,7 @@ namespace MYLE {
     }
 
 
-	int numeric_value(char& c)
+	int numeric_value(char c)
 	{
 		return c - '0';
 	}

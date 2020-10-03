@@ -10,10 +10,10 @@ namespace MYLE
 	/// </summary>
 	/// <param name="c">Character</param>
 	/// <returns>Numeric value</returns>
-	int numeric_value(char& c);
+	int numeric_value(char c);
 
 	//TODO
 	//write method
-	MYLE::ECHARACTER_TYPE char_type(char& c);
+	MYLE::ECHARACTER_TYPE char_type(char c);
 
 };
