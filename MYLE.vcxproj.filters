@@ -57,22 +57,31 @@
     <ClInclude Include="include\myle_benchmark.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="myle_object2d.h">
+    <ClInclude Include="include\myle_object2d.h">
       <Filter>Header Files\Geometry\2D</Filter>
     </ClInclude>
-    <ClInclude Include="Identifieable.h">
+    <ClInclude Include="include\myle_identifieable.h">
       <Filter>Header Files\Data\Abstract Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myle_character.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myle_init.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myle_data.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\myle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="myle_object2d.cpp">
-      <Filter>Header Files\Geometry\2D\Private</Filter>
-    </ClCompile>
     <ClCompile Include="example\object2d_example.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\myle_object2d.cpp">
+      <Filter>Header Files\Geometry\2D\Private</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

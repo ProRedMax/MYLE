@@ -40,4 +40,4 @@ namespace MYLE {
     /// <returns>Amount</returns>
     int digits(int& i);
 
-}
+};

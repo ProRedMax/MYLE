@@ -12,7 +12,7 @@ namespace MYLE {
 
     void Init()
     {
-        std::srand(std::random_device()());
+        srand(std::random_device()());
     }
 
     std::string rand_string(int length, const std::string& charSet)
@@ -139,7 +139,7 @@ namespace MYLE {
         int temp, sum = 0;
         for (unsigned int i = 0; i < number.size(); i++)
         {
-            temp = number[i] - '0';
+            temp = numeric_value(number[i]);
             if ((i + offset) % 2 == 1)
             {
                 temp *= 2;
@@ -216,4 +216,9 @@ namespace MYLE {
         return luhn;
     }
 
-}
+
+	int numeric_value(char c)
+	{
+		return c - '0';
+	}
+};

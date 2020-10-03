@@ -25,4 +25,4 @@ namespace MYLE {
     /// <returns>Number in String</returns>
     std::string generate_luhn(int size);
 
-}
+};

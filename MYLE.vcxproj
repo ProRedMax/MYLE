@@ -130,20 +130,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="example\object2d_example.cpp" />
-    <ClCompile Include="myle_object2d.cpp" />
+    <ClCompile Include="src\myle_object2d.cpp" />
     <ClCompile Include="src\myle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Identifieable.h" />
+    <ClInclude Include="include\myle_data.h" />
+    <ClInclude Include="include\myle_character.h" />
+    <ClInclude Include="include\myle_identifieable.h" />
     <ClInclude Include="include\myle.h" />
     <ClInclude Include="include\myle_benchmark.h" />
+    <ClInclude Include="include\myle_init.h" />
     <ClInclude Include="include\myle_makro.h" />
     <ClInclude Include="include\myle_algorithm.h" />
     <ClInclude Include="include\myle_file.h" />
     <ClInclude Include="include\myle_global.h" />
     <ClInclude Include="include\myle_integer.h" />
     <ClInclude Include="include\myle_string.h" />
-    <ClInclude Include="myle_object2d.h" />
+    <ClInclude Include="include\myle_object2d.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
