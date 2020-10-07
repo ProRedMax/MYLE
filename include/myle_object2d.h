@@ -52,7 +52,7 @@ namespace MYLE
 		std::string m_Name;
 
 		/// <summary>
-		/// Descriibe your figure
+		/// Describe your figure
 		/// </summary>
 		std::string m_Description;
 

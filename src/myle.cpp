@@ -221,4 +221,18 @@ namespace MYLE {
 	{
 		return c - '0';
 	}
+
+    void clamp(float& number, float min, float max)
+    {
+        if (number > max)
+        {
+            number = max;
+        } else if (number < min)
+        {
+            number = min;
+        }
+    }
+
+
+    
 };
