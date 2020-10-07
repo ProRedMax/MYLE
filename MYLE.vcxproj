@@ -36,7 +36,7 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
@@ -129,7 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="example\object2d_example.cpp" />
+    <ClCompile Include="example\number_example.cpp" />
     <ClCompile Include="src\myle_object2d.cpp" />
     <ClCompile Include="src\myle.cpp" />
   </ItemGroup>
@@ -145,8 +145,12 @@
     <ClInclude Include="include\myle_file.h" />
     <ClInclude Include="include\myle_global.h" />
     <ClInclude Include="include\myle_integer.h" />
+    <ClInclude Include="include\myle_number.h" />
     <ClInclude Include="include\myle_string.h" />
     <ClInclude Include="include\myle_object2d.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\myle_float.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

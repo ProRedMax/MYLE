@@ -11,7 +11,7 @@
 
 //Advanced MYLE Library
 #include "myle_string.h"
-#include "myle_integer.h"
+#include "myle_number.h"
 #include "myle_file.h"
 #include "myle_algorithm.h"
 #include "myle_makro.h"
