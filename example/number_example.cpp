@@ -1,8 +1,7 @@
 ﻿#include <myle.h>
 #include <ostream>
 
-
-#include "../include/myle_float.h"
+#include <myle_float.h>
 
 int main()
 {
