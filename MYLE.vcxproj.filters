@@ -78,6 +78,9 @@
     <ClInclude Include="include\myle_float.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\myle_memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\myle.cpp">
@@ -86,7 +89,7 @@
     <ClCompile Include="src\myle_object2d.cpp">
       <Filter>Header Files\Geometry\2D\Private</Filter>
     </ClCompile>
-    <ClCompile Include="example\number_example.cpp">
+    <ClCompile Include="example\memory_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

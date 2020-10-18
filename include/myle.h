@@ -17,6 +17,7 @@
 #include "myle_makro.h"
 #include "myle_benchmark.h"
 #include "myle_character.h"
+#include "myle_memory.h"
 
 //Objects
 #include "myle_object2d.h"
