@@ -3,48 +3,50 @@
 
 //Warning: This feature is not yet completed, it could be that unexpected behavior occurs. Use at your own risk.
 
-struct TestStruct
+struct test_struct
 {
-	uint32_t testValue = 0;
-	float testValue1 = 0.0f;
+    uint32_t test_value = 0;
+    float test_value1 = 0.0f;
 };
 
 int main()
 {
-	MYLE::Init();
+    MYLE::Init();
 
-	MYLE::ResourceManager manager;
+    std::cout << MYLE::plank << std::endl;
 
-	TestStruct* test1;
-	TestStruct* test2;
-	TestStruct* test3;
+    MYLE::ResourceManager manager;
 
-	uint32_t blockID = 0;
+    test_struct* test1;
+    test_struct* test2;
+    test_struct* test3;
 
-	{
-		MYLE::Timer timer("Memory speed");
+    uint32_t block_id = 0;
 
-		//Allocating a 100 byte big block of memory 
-		manager.AllocateMemoryBlock(blockID, 100);
+    {
+        MYLE::Timer timer("Memory speed");
 
-		//Allocating TestStructs
-		test1 = manager.AllocateResource<TestStruct>(0, (uint32_t)3, 0.5f);
-		test2 = manager.AllocateResource<TestStruct>(0, (uint32_t)5, 1.5f);
-		test3 = manager.AllocateResource<TestStruct>(0, (uint32_t)6, 2.5f);
-	}
+        //Allocating a 100 byte big block of memory 
+        manager.AllocateMemoryBlock(block_id, 100);
 
-		std::cout << test1->testValue << std::endl;
-		std::cout << test1->testValue1 << std::endl;
+        //Allocating TestStructs
+        test1 = manager.AllocateResource<test_struct>(0, (uint32_t)3, 0.5f);
+        test2 = manager.AllocateResource<test_struct>(0, (uint32_t)5, 1.5f);
+        test3 = manager.AllocateResource<test_struct>(0, (uint32_t)6, 2.5f);
+    }
 
-		std::cout << test2->testValue << std::endl;
-		std::cout << test2->testValue1 << std::endl;
+    std::cout << test1->test_value << std::endl;
+    std::cout << test1->test_value1 << std::endl;
 
-		std::cout << test3->testValue << std::endl;
-		std::cout << test3->testValue1 << std::endl;
-		
-		manager.FreeResource(test1);
-		manager.FreeResource(test2);
-		manager.FreeResource(test3);
+    std::cout << test2->test_value << std::endl;
+    std::cout << test2->test_value1 << std::endl;
 
-		manager.FreeMemoryBlock(blockID);
+    std::cout << test3->test_value << std::endl;
+    std::cout << test3->test_value1 << std::endl;
+
+    manager.FreeResource(test1);
+    manager.FreeResource(test2);
+    manager.FreeResource(test3);
+
+    manager.FreeMemoryBlock(block_id);
 }
