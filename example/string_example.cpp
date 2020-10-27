@@ -2,7 +2,7 @@
 
 int main()
 {
-	MYLE::Init();
+	MYLE::init();
 
 	{
 		MYLE::Timer timer("String speed");

@@ -10,7 +10,7 @@
 
 namespace MYLE {
 
-    void Init()
+    void init()
     {
         srand(std::random_device()());
     }

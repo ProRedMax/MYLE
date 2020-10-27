@@ -11,7 +11,7 @@ struct test_struct
 
 int main()
 {
-    MYLE::Init();
+    MYLE::init();
 
     std::cout << MYLE::plank << std::endl;
 
@@ -27,12 +27,12 @@ int main()
         MYLE::Timer timer("Memory speed");
 
         //Allocating a 100 byte big block of memory 
-        manager.AllocateMemoryBlock(block_id, 100);
+        manager.alloc_memory_block(block_id, 100);
 
         //Allocating TestStructs
-        test1 = manager.AllocateResource<test_struct>(0, (uint32_t)3, 0.5f);
-        test2 = manager.AllocateResource<test_struct>(0, (uint32_t)5, 1.5f);
-        test3 = manager.AllocateResource<test_struct>(0, (uint32_t)6, 2.5f);
+        test1 = manager.alloc_resource<test_struct>(0, (uint32_t)3, 0.5f);
+        test2 = manager.alloc_resource<test_struct>(0, (uint32_t)5, 1.5f);
+        test3 = manager.alloc_resource<test_struct>(0, (uint32_t)6, 2.5f);
     }
 
     std::cout << test1->test_value << std::endl;
@@ -44,9 +44,9 @@ int main()
     std::cout << test3->test_value << std::endl;
     std::cout << test3->test_value1 << std::endl;
 
-    manager.FreeResource(test1);
-    manager.FreeResource(test2);
-    manager.FreeResource(test3);
+    manager.free_resource(test1);
+    manager.free_resource(test2);
+    manager.free_resource(test3);
 
-    manager.FreeMemoryBlock(block_id);
+    manager.free_memory_block(block_id);
 }

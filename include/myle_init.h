@@ -8,6 +8,6 @@ namespace MYLE {
 	/// <summary>
 	/// Initialize the MYLE Library
 	/// </summary>
-	void Init();
+	void init();
 
 }

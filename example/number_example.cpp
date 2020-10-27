@@ -5,7 +5,7 @@
 
 int main()
 {
-	MYLE::Init();
+	MYLE::init();
 
 	{
 		MYLE::Timer timer("Clamping speed");

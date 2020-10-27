@@ -69,7 +69,7 @@ namespace MYLE
         * \param The parameters to initialize the resource.
         */
         template <typename T, typename... TArgs>
-        T* AllocateResource(uint32_t blockID, TArgs ... Args)
+        T* alloc_resource(uint32_t blockID, TArgs ... Args)
         {
             Block& block = m_Blocks.at(blockID);
 
@@ -129,7 +129,7 @@ namespace MYLE
         *  \param resource The pointer to the given resource.
         */
         template <typename T>
-        void FreeResource(T* resource)
+        void free_resource(T* resource)
         {
             for (auto& it : m_Blocks)
             {
@@ -154,7 +154,7 @@ namespace MYLE
         * \param id The id of the memory block.
         * \param size The size of the memory block.
         */
-        void AllocateMemoryBlock(uint32_t id, uint32_t size)
+        void alloc_memory_block(uint32_t id, uint32_t size)
         {
             void* block = std::malloc(size);
 
@@ -165,7 +165,7 @@ namespace MYLE
         * \brief Frees The block of memory at the given index.
         * \param index The index of the block.
         */
-        void FreeMemoryBlock(uint32_t index)
+        void free_memory_block(uint32_t index)
         {
             std::free(m_Blocks.at(index).m_Block);
 
