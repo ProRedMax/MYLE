@@ -129,11 +129,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="example\memory_example.cpp" />
+    <ClCompile Include="example\string_example.cpp" />
     <ClCompile Include="src\myle_object2d.cpp" />
     <ClCompile Include="src\myle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\myle_console.h" />
     <ClInclude Include="include\myle_data.h" />
     <ClInclude Include="include\myle_character.h" />
     <ClInclude Include="include\myle_identifieable.h" />

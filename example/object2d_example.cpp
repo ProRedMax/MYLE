@@ -9,8 +9,7 @@ int main()
 
 		MYLE::Object2d myObject("Test1", "Description test");
 
-		std::cout << myObject.to_string() << std::endl;
-		std::cout << myObject.mPID() << std::endl;
-
+		MYLE::log(MYLE::LogLevel::Trace, "%s", myObject.to_string().c_str());
+		MYLE::log(MYLE::LogLevel::Trace, "%zu", myObject.mPID());
 	}
 }

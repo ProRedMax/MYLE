@@ -9,19 +9,19 @@ int main()
 
 		std::string luhn_number = MYLE::generate_luhn(20);
 
-		std::cout << "Generated luhn number is " << luhn_number << std::endl;
+		MYLE::log(MYLE::LogLevel::Trace, "Generated luhn number is %s", luhn_number.c_str());
 
 		std::string number = luhn_number.substr(0, luhn_number.size() - 1);
-		
-		std::cout << "Luhn sum for " << number << " is: " << MYLE::luhn_checksum(number) << std::endl;
+
+		MYLE::log(MYLE::LogLevel::Trace, "Luhn sum for %s is: %i", number.c_str(), MYLE::luhn_checksum(number));
 
 		if (MYLE::luhn(luhn_number))
 		{
-			std::cout << luhn_number << " passes the luhn algorithm!" << std::endl;
+			MYLE::log(MYLE::LogLevel::Info, "%s passed the luhn algorithm!", luhn_number.c_str());
 		}
 		else
 		{
-			std::cout << luhn_number << " failed  the luhn algorithm!" << std::endl;
+			MYLE::log(MYLE::LogLevel::Error, "%s failed the luhn algorithm!", luhn_number.c_str());
 		}
 	}
 }

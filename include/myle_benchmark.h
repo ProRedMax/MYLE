@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 
+#include "myle_console.h"
+
 namespace MYLE {
 
 	class Timer
@@ -29,7 +31,7 @@ namespace MYLE {
 		{
 			if (m_Active)
 			{
-				std::cout << "Timer " << m_Name << " is already started." << std::endl;
+				log(LogLevel::Error, "Timer %s is already started.", m_Name.c_str());
 				return false;
 			}
 
@@ -44,7 +46,7 @@ namespace MYLE {
 		{
 			if (!m_Active)
 			{
-				std::cout << "Timer " << m_Name << " is already stopped." << std::endl;
+				log(LogLevel::Error, "Timer %s is already stopped.", m_Name.c_str());
 				return false;
 			}
 
@@ -61,13 +63,15 @@ namespace MYLE {
 		{
 			if (m_Active)
 			{
-				std::cout << "Results of timer " << m_Name << " are currently not available." << std::endl;
+				log(LogLevel::Error, "Results of timer %s are currently not available.", m_Name.c_str());
 				return false;
 			}
 
 			std::cout << std::endl;
-			std::cout << "Timer: " << m_Name << std::endl;
-			std::cout << "	Duration: " << (m_ElapsedTime.count() / 1000.0f) << "ms" << std::endl;
+
+			log(LogLevel::Info, "Timer: %s", m_Name.c_str());
+			log(LogLevel::Info, "	Duration: %fms", m_ElapsedTime.count() / 1000.0f);
+
 			std::cout << std::endl;
 
 			return true;

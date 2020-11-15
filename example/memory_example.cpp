@@ -13,7 +13,7 @@ int main()
 {
     MYLE::init();
 
-    std::cout << MYLE::plank << std::endl;
+    MYLE::log(MYLE::LogLevel::Trace, "%.8e", MYLE::planck);
 
     MYLE::ResourceManager manager;
 
@@ -35,14 +35,14 @@ int main()
         test3 = manager.alloc_resource<test_struct>(0, (uint32_t)6, 2.5f);
     }
 
-    std::cout << test1->test_value << std::endl;
-    std::cout << test1->test_value1 << std::endl;
+    MYLE::log(MYLE::LogLevel::Trace, "%i", test1->test_value);
+    MYLE::log(MYLE::LogLevel::Trace, "%f", test1->test_value1);
 
-    std::cout << test2->test_value << std::endl;
-    std::cout << test2->test_value1 << std::endl;
+    MYLE::log(MYLE::LogLevel::Trace, "%i", test2->test_value);
+    MYLE::log(MYLE::LogLevel::Trace, "%f", test2->test_value1);
 
-    std::cout << test3->test_value << std::endl;
-    std::cout << test3->test_value1 << std::endl;
+    MYLE::log(MYLE::LogLevel::Trace, "%i", test3->test_value);
+    MYLE::log(MYLE::LogLevel::Trace, "%f", test3->test_value1);
 
     manager.free_resource(test1);
     manager.free_resource(test2);

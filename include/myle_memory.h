@@ -95,7 +95,7 @@ namespace MYLE
             {
                 //If this occurs than there is no segment in any given block in which T would fit.
                 //This does not necessarily mean that the computer is out of memory.
-                assert(false, "Out of memory.");
+                assert(false); // "Out of memory."
                 return nullptr;
             }
             Segment& segment = block.m_Segments.at(index);
@@ -145,7 +145,7 @@ namespace MYLE
                 }
             }
 
-            assert(false, "The given resource is not located in any given memory block");
+            assert(false); // "The given resource is not located in any given memory block"
         }
 
 

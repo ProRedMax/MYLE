@@ -12,6 +12,7 @@ int main()
 
 		float myFloat = 265.12f;
 		MYLE::clamp(myFloat, 200, 250);
-		std::cout << myFloat << std::endl;
+
+		MYLE::log(MYLE::LogLevel::Trace, "%f", myFloat);
 	}
 }

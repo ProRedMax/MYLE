@@ -7,6 +7,6 @@ int main()
 	{
 		MYLE::Timer timer("String speed");
 
-		std::cout << MYLE::rand_string(10) << std::endl;
+		MYLE::log(MYLE::LogLevel::Trace, "%s", MYLE::rand_string(10).c_str());
 	}
 }
