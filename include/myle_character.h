@@ -14,6 +14,6 @@ namespace MYLE
 
 	//TODO
 	//write method
-	MYLE::ECHARACTER_TYPE char_type(char c);
+	MYLE::ECHARACTER_TYPE char_type_ascii(char c);
 
 };

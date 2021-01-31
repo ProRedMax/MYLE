@@ -8,8 +8,8 @@
 #include <random>
 #include <iostream>
 
-namespace MYLE {
-
+namespace MYLE
+{
     void init()
     {
         srand(std::random_device()());
@@ -36,7 +36,7 @@ namespace MYLE {
 
     int rand_int(int from, int to, bool seed)
     {
-        if(seed) std::srand(std::random_device()());
+        if (seed) std::srand(std::random_device()());
 
         return std::rand() % (to - from + 1) + from;
     }
@@ -131,7 +131,6 @@ namespace MYLE {
     }
 
 
-
     int getLuhnSum(std::string number)
     {
         int offset = (number.size() % 2 == 0) ? 0 : 1;
@@ -143,7 +142,8 @@ namespace MYLE {
             if ((i + offset) % 2 == 1)
             {
                 temp *= 2;
-                if (temp > 9) {
+                if (temp > 9)
+                {
                     temp -= 9;
                 }
             }
@@ -217,22 +217,67 @@ namespace MYLE {
     }
 
 
-	int numeric_value(char c)
-	{
-		return c - '0';
-	}
+    int numeric_value(char c)
+    {
+        return c - '0';
+    }
+
+    ECHARACTER_TYPE char_type_ascii(char c)
+    {
+        int char_value = static_cast<int>(c);
+        if (char_value == 0)
+        {
+            return ECHARACTER_TYPE::NULL_CHARACTER;
+        }
+        if (char_value > 0 && char_value <= 31)
+        {
+            return ECHARACTER_TYPE::SYSTEM_DEFAULTS;
+        }
+        if (char_value == 32)
+        {
+            return ECHARACTER_TYPE::SPACE;
+        }
+        if (char_value > 32 && char_value <= 47)
+        {
+            return ECHARACTER_TYPE::SPECIAL_CHARACTERS;
+        }
+        if (char_value > 47 && char_value <= 57)
+        {
+            return ECHARACTER_TYPE::NUMBER;
+        }
+        if (char_value > 57 && char_value <= 64)
+        {
+            return ECHARACTER_TYPE::SPECIAL_CHARACTERS;
+        }
+        if (char_value > 64 && char_value <= 90)
+        {
+            return ECHARACTER_TYPE::UPPERCASE_LETTER;
+        }
+        if (char_value > 90 && char_value <= 96)
+        {
+            return ECHARACTER_TYPE::SPECIAL_CHARACTERS;
+        }
+        if (char_value > 96 && char_value <= 122)
+        {
+            return ECHARACTER_TYPE::LOWERCASE_LETTER;
+        }
+        if (char_value > 122 && char_value <= 126)
+        {
+            return ECHARACTER_TYPE::SPECIAL_CHARACTERS;
+        }
+
+        return ECHARACTER_TYPE::SYSTEM_DEFAULTS; //The 127th character is [DEL] so it is a SYSTEM_DEFAULT
+    }
 
     void clamp(float& number, float min, float max)
     {
         if (number > max)
         {
             number = max;
-        } else if (number < min)
+        }
+        else if (number < min)
         {
             number = min;
         }
     }
-
-
-    
 };
