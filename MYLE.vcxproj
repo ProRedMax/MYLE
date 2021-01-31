@@ -137,6 +137,8 @@
     <ClInclude Include="include\myle_console.h" />
     <ClInclude Include="include\myle_data.h" />
     <ClInclude Include="include\myle_character.h" />
+    <ClInclude Include="include\myle_enum.h" />
+    <ClInclude Include="include\myle_enum_entry.h" />
     <ClInclude Include="include\myle_identifieable.h" />
     <ClInclude Include="include\myle.h" />
     <ClInclude Include="include\myle_benchmark.h" />

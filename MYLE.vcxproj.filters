@@ -84,6 +84,12 @@
     <ClInclude Include="include\myle_console.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\myle_enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\myle_enum_entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\myle.cpp">

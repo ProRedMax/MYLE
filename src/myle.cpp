@@ -225,6 +225,7 @@ namespace MYLE
     ECHARACTER_TYPE char_type_ascii(char c)
     {
         int char_value = static_cast<int>(c);
+    	
         if (char_value == 0)
         {
             return ECHARACTER_TYPE::NULL_CHARACTER;
