@@ -4,10 +4,13 @@
 #include <string>
 #include <vector>
 
+#define MYLE_ENUM (...) enum class myle_fallback_enum_class {public:}; {};
+
 namespace MYLE
 {
     class myle_enum
     {
+        
     private:
         std::vector<enum_entry> enum_values;
         enum_entry null_entry = enum_entry("NULL");
@@ -21,6 +24,8 @@ namespace MYLE
                 enum_values.emplace_back(element);
             }
         }
+
+        
 
         enum_entry get(const std::string& entry)
         {

@@ -6,18 +6,11 @@ int main()
 
 	{
 		MYLE::Timer timer("M_ENUM speed");
+		enum class my_enum { MYLE, IS, A, GREAT, LIBRARY };
 
-		MYLE::myle_enum myEnum = MYLE::myle_enum(std::vector<std::string> {"MYLE", "IS", "A", "GREAT", "LIBRARY"});
+		MYLE::myle_enum
+	
 		
-		for (int i = 0; i < 1000; ++i)
-		{
-			MYLE::enum_entry myName = myEnum.get("MYLE");
-			if (myName.getName() == "GREAT")
-			{
-				unsigned int i = 0;
-				i++;
-			}
-		}
 	}
 
 
@@ -27,15 +20,16 @@ int main()
 
 		enum class my_enum { MYLE, IS, A, GREAT, LIBRARY };
 		
-		for (int i = 0; i < 1000; ++i)
-		{	
-			if (my_enum::GREAT == my_enum::GREAT)
+		
+		for (int i = 0; i < 1; ++i)
+		{
+			my_enum hallo = static_cast<my_enum>(MYLE::rand_int(0, 3, false));
+			
+			if (hallo == my_enum::GREAT)
 			{
 				unsigned int i = 0;
 				i++;
 			}
 		}
-
 	}
-
 }

@@ -6,7 +6,7 @@
 #define MYLE_FWD(...) ::std::forward<decltype(__VA_ARGS__)>(__VA_ARGS__)
 
 ///
-/// \brief You can use this if an exception is not thrown under a certaint condition/expression
+/// \brief You can use this if an exception is not thrown under a certain condition/expression
 ///
 #define MYLE_NOEXCEPT_FOR(expression) noexcept(noexcept(expression))
 
