@@ -13,6 +13,11 @@ namespace MYLE
 		{
 			name = value;
 		}
+
+		std::string getName()
+		{
+			return name;
+		}
 		
 	};
 }

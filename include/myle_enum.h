@@ -10,6 +10,7 @@ namespace MYLE
 	{
 	private:
 		std::vector<enum_entry> enum_values;
+		enum_entry null_entry = enum_entry("NULL");
 		
 	public:
 
@@ -20,12 +21,28 @@ namespace MYLE
 				enum_values.emplace_back(element);
 			}
 		}
-
-		// TODO Write method
-		enum_entry get(std::string entry)
-		{
-			
-		}
 		
+		enum_entry get(const std::string& entry)
+		{
+			std::vector<std::string> entries = getAllEntries();
+			for (int i = 0; i < entries.capacity(); ++i)
+			{
+				if (entries.at(i) == entry)
+				{
+					return enum_values.at(i);	//Certain risk but efficient
+				}
+			}
+			return null_entry;
+		}
+
+		std::vector<std::string> getAllEntries()
+		{
+			std::vector<std::string> returnVector;
+			for (enum_entry entry : enum_values)
+			{
+				returnVector.push_back(entry.getName());
+			}
+			return returnVector;
+		}
 	};
 }
