@@ -9,7 +9,7 @@ namespace MYLE
 		std::string name;
 	public:
 
-		enum_entry(std::string value)
+		enum_entry(const std::string & value)
 		{
 			name = value;
 		}
