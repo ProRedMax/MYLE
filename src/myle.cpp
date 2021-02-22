@@ -111,6 +111,26 @@ namespace MYLE
         }
     }
 
+    void mult_string(std::string& __string, const int& n)
+    {
+        for (int i = 0; i < n; ++i)
+        {
+            __string.append(__string);
+        }
+    }
+
+    void mult_string_s(std::string& __string, const int& n)
+    {
+        for (int i = 0; i < n; ++i)
+        {
+            __string.append(__string);
+            if (i != n - 1)
+            {
+                __string.append(" ");
+            }
+        }
+    }
+
     void __swap(int& a, int& b)
     {
         a ^= b;
@@ -225,7 +245,7 @@ namespace MYLE
     ECHARACTER_TYPE char_type_ascii(char c)
     {
         int char_value = static_cast<int>(c);
-    	
+
         if (char_value == 0)
         {
             return ECHARACTER_TYPE::NULL_CHARACTER;

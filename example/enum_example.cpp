@@ -6,10 +6,7 @@ int main()
 
 	{
 		MYLE::Timer timer("M_ENUM speed");
-		enum class my_enum { MYLE, IS, A, GREAT, LIBRARY };
-
-		MYLE::myle_enum
-	
+		enum class my_enum { MYLE, IS, A, GREAT, LIBRARY };	
 		
 	}
 

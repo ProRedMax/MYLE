@@ -28,4 +28,21 @@ namespace MYLE {
     /// <param name="replaceWith">Character to replace with</param>
     /// <param name="__string">Your string</param>
     void replace_all(const int& from, const int& to, const char& toFind, const char& replaceWith, std::string& __string);
+
+
+    /**
+     * \brief Multiply the given string 
+     * \param __string String to multiply
+     * \param n How often the string should be multiplied
+     */
+    void mult_string(std::string& __string, const int& n);
+
+    /**
+     * \brief Multiply a given string with blank spaces in between. 
+     * \param __string String to multiply
+     * \param n How often the string should be multiplied
+     */
+    void mult_string_s(std::string& __string, const int& n);
+
+    
 }
