@@ -98,6 +98,7 @@ namespace MYLE
                 assert(false); // "Out of memory."
                 return nullptr;
             }
+
             Segment& segment = block.m_Segments.at(index);
 
             //If T fills up the whole segment delete it from the list.
@@ -114,7 +115,7 @@ namespace MYLE
             end = block.m_Segments.size() - 1 < index + 1 ? block.m_BlockSize : block.m_Segments.at(index + 1).m_Begin;
 
             //Now push the new segment on the unordered_map
-            block.m_Segments.push_back({segment.m_Begin + sizeof(T), end});
+            block.m_Segments.push_back({ segment.m_Begin + sizeof(T), end });
 
             //And erase the old one
             block.m_Segments.erase(block.m_Segments.begin() + index);
@@ -126,6 +127,7 @@ namespace MYLE
 
         /**
         *  \brief Frees a resource if it was stored in an allocated memory block.
+        *  Attention: No deallocation is happening!
         *  \param resource The pointer to the given resource.
         */
         template <typename T>
@@ -146,6 +148,33 @@ namespace MYLE
             }
 
             assert(false); // "The given resource is not located in any given memory block"
+        }
+
+        /**
+        *  \brief Free a resource in the given memory block. Use always this function, if you have many memory blocks allocated, due to the heavy performance advantage.
+        *  Attention: No deallocation is happening!
+        *  \param resource The pointer to the given resource.
+        *  \param index Index of the memory block in which the resource is stored
+        */
+        template<typename T>
+        void free_resource(T* resource, uint32_t index)
+        {
+            Block& block = m_Blocks.at(index);
+
+            //Calculate the offset from the starting of the memory block to the resource.
+            ptrdiff_t byteDiff = (char*)resource - (char*)block.m_Block;
+
+            //If the offset is negative, then the resource is somewhere before the memory block.
+            //If the offset is positive and not greater than the block size, then the resource is in the block and thus can be freed.
+            if (byteDiff >= 0 && byteDiff < block.m_BlockSize)
+            {
+                block.m_Segments.push_back({ (uint32_t)byteDiff, (uint32_t)byteDiff + sizeof(T) });
+                return;
+            }
+            else
+            {
+                assert(false); // "The given resource is not located in the given memory block"
+            }
         }
 
 

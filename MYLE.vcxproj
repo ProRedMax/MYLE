@@ -129,7 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="example\string_example.cpp" />
+    <ClCompile Include="example\memory_example.cpp" />
     <ClCompile Include="src\myle_object2d.cpp" />
     <ClCompile Include="src\myle.cpp" />
   </ItemGroup>

@@ -35,6 +35,10 @@ int main()
         test3 = manager.alloc_resource<test_struct>(0, (uint32_t)6, 2.5f);
     }
 
+    manager.free_resource(test1, block_id);
+
+    test1 = manager.alloc_resource<test_struct>(0, (uint32_t)6, 2.5f);
+
     MYLE::log(MYLE::LogLevel::Trace, "%i", test1->test_value);
     MYLE::log(MYLE::LogLevel::Trace, "%f", test1->test_value1);
 
@@ -44,9 +48,9 @@ int main()
     MYLE::log(MYLE::LogLevel::Trace, "%i", test3->test_value);
     MYLE::log(MYLE::LogLevel::Trace, "%f", test3->test_value1);
 
-    manager.free_resource(test1);
-    manager.free_resource(test2);
-    manager.free_resource(test3);
+    manager.free_resource(test1, block_id);
+    manager.free_resource(test2, block_id);
+    manager.free_resource(test3, block_id);
 
     manager.free_memory_block(block_id);
 }
