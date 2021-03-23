@@ -19,6 +19,8 @@
 #include "myle_character.h"
 #include "myle_memory.h"
 #include "myle_console.h"
+#include "myle_enum.h"
+#include "myle_enum_entry.h"
 
 //Objects
 #include "myle_object2d.h"
