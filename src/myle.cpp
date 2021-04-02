@@ -18,7 +18,6 @@ namespace MYLE
     std::string rand_string(int length, const std::string& charSet)
     {
         std::string randomString(length, '0');
-        int random;
 
         for (int i = 0; i < length; ++i)
         {
@@ -100,13 +99,13 @@ namespace MYLE
         return binary;
     }
 
-    void replace_all(const int& from, const int& to, const char& toFind, const char& replaceWith, std::string& __string)
+    void replace_all(const int& from, const int& to, const char& toFind, const char& replaceWith, std::string& string)
     {
         for (int var = from; var < to; ++var)
         {
-            if (__string[var] == toFind)
+            if (string[var] == toFind)
             {
-                __string[var] = replaceWith;
+                string[var] = replaceWith;
             }
         }
     }
@@ -184,7 +183,7 @@ namespace MYLE
         return 10 - (sum % 10);
     }
 
-    bool MYLE::luhn(std::string number)
+    bool luhn(std::string number)
     {
         return (getLuhnSum(number.substr(0, number.size() - 1))
             + std::stoi(number.substr(number.size() - 1))) % 10 == 0;

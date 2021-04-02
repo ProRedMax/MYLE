@@ -115,7 +115,7 @@ namespace MYLE
             end = block.m_Segments.size() - 1 < index + 1 ? block.m_BlockSize : block.m_Segments.at(index + 1).m_Begin;
 
             //Now push the new segment on the unordered_map
-            block.m_Segments.push_back({ segment.m_Begin + sizeof(T), end });
+            block.m_Segments.push_back({ segment.m_Begin + (uint32_t)sizeof(T), end });
 
             //And erase the old one
             block.m_Segments.erase(block.m_Segments.begin() + index);
@@ -168,7 +168,7 @@ namespace MYLE
             //If the offset is positive and not greater than the block size, then the resource is in the block and thus can be freed.
             if (byteDiff >= 0 && byteDiff < block.m_BlockSize)
             {
-                block.m_Segments.push_back({ (uint32_t)byteDiff, (uint32_t)byteDiff + sizeof(T) });
+                block.m_Segments.push_back({ (uint32_t)byteDiff, (uint32_t)byteDiff + (uint32_t)sizeof(T) });
                 return;
             }
             else
