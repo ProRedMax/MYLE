@@ -21,6 +21,8 @@
 #include "myle_console.h"
 #include "myle_enum.h"
 #include "myle_enum_entry.h"
+#include "myle_regex.h"
+
 
 //Objects
 #include "myle_object2d.h"
