@@ -155,7 +155,7 @@
     <ClInclude Include="include\myle_float.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="example\memory_example.cpp" />
+    <ClCompile Include="example\regex_example.cpp" />
     <ClCompile Include="src\myle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

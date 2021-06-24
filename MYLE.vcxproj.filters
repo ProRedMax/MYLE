@@ -90,12 +90,15 @@
     <ClInclude Include="include\myle_enum_entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\myle_regex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="example\memory_example.cpp">
+    <ClCompile Include="src\myle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\myle.cpp">
+    <ClCompile Include="example\regex_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

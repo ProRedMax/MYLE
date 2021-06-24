@@ -4,18 +4,18 @@
 
 namespace MYLE
 {
-    inline bool contains(std::string& myString, std::string& otherString, bool iCase = false)
+    inline bool contains(std::string& myString, std::string otherString, bool iCase = false)
     {
         std::regex rgx(otherString, std::regex_constants::ECMAScript | iCase ? std::regex::icase : std::regex::basic);
         return std::regex_search(myString, rgx); 
     }
 
-    inline std::vector<std::string> getAllMatches(std::string& myString, std::string& regex)
+    inline std::vector<std::string> getAllMatches(std::string& myString, std::regex regex)
     {
         std::vector<std::string> returnVector;
-        std::regex rgx(regex);
+       
         auto words_begin = 
-        std::sregex_iterator(myString.begin(), myString.end(), rgx);
+        std::sregex_iterator(myString.begin(), myString.end(), regex);
         auto words_end = std::sregex_iterator();
 
         for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
