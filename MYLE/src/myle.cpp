@@ -8,6 +8,10 @@
 #include <random>
 #include <iostream>
 
+#include <map>
+#include <stack>
+#include <queue>
+
 namespace MYLE
 {
     void init()
@@ -21,7 +25,7 @@ namespace MYLE
 
         for (int i = 0; i < length; ++i)
         {
-            randomString[i] = charSet[rand_int(0, charSet.size())];
+            randomString[i] = charSet[rand_int(0, (int)charSet.size())];
         }
 
         return randomString;
@@ -141,12 +145,12 @@ namespace MYLE
     {
         double K = std::log10(i);
         K -= std::floor(K);
-        return std::pow(10, K);
+        return (int)std::pow(10, K);
     }
 
     int digits(int& i)
     {
-        return std::floor(std::log10(i)) + 1;
+        return (int)std::floor(std::log10(i)) + 1;
     }
 
 

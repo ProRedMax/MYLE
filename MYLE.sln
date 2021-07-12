@@ -1,31 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.960
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MYLE", "MYLE.vcxproj", "{AB4B1332-E0D6-4C6D-8C94-A02B63C9960A}"
+# Visual Studio Version 16
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MYLE-Examples", "MYLE-Examples\MYLE-Examples.vcxproj", "{6864AE26-D424-2A5D-9D5F-73DA09DF6E39}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MYLE", "MYLE\MYLE.vcxproj", "{5CCD887C-4804-8A0D-F1F0-6F10DD06060F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AB4B1332-E0D6-4C6D-8C94-A02B63C9960A}.Debug|x64.ActiveCfg = Debug|x64
-		{AB4B1332-E0D6-4C6D-8C94-A02B63C9960A}.Debug|x64.Build.0 = Debug|x64
-		{AB4B1332-E0D6-4C6D-8C94-A02B63C9960A}.Debug|x86.ActiveCfg = Debug|Win32
-		{AB4B1332-E0D6-4C6D-8C94-A02B63C9960A}.Debug|x86.Build.0 = Debug|Win32
-		{AB4B1332-E0D6-4C6D-8C94-A02B63C9960A}.Release|x64.ActiveCfg = Release|x64
-		{AB4B1332-E0D6-4C6D-8C94-A02B63C9960A}.Release|x64.Build.0 = Release|x64
-		{AB4B1332-E0D6-4C6D-8C94-A02B63C9960A}.Release|x86.ActiveCfg = Release|Win32
-		{AB4B1332-E0D6-4C6D-8C94-A02B63C9960A}.Release|x86.Build.0 = Release|Win32
+		{6864AE26-D424-2A5D-9D5F-73DA09DF6E39}.Debug|x64.ActiveCfg = Debug|x64
+		{6864AE26-D424-2A5D-9D5F-73DA09DF6E39}.Debug|x64.Build.0 = Debug|x64
+		{6864AE26-D424-2A5D-9D5F-73DA09DF6E39}.Release|x64.ActiveCfg = Release|x64
+		{6864AE26-D424-2A5D-9D5F-73DA09DF6E39}.Release|x64.Build.0 = Release|x64
+		{5CCD887C-4804-8A0D-F1F0-6F10DD06060F}.Debug|x64.ActiveCfg = Debug|x64
+		{5CCD887C-4804-8A0D-F1F0-6F10DD06060F}.Debug|x64.Build.0 = Debug|x64
+		{5CCD887C-4804-8A0D-F1F0-6F10DD06060F}.Release|x64.ActiveCfg = Release|x64
+		{5CCD887C-4804-8A0D-F1F0-6F10DD06060F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6AC7C936-7CA8-4ECE-B5E1-B3DFA5DA5F24}
 	EndGlobalSection
 EndGlobal
