@@ -1,0 +1,231 @@
+Change Log for JPCRE2
+---------------------
+
+
+Version 10.32.01 - Thu 20 Aug 2020 05:57:13 AM UTC
+--------------------------------------------------
+
+* Fix issue #29 on Github.
+
+
+Version 10.31.04 - Thu 09 Apr 2020 02:19:28 PM UTC
+--------------------------------------------------
+
+* Fix windows build, thanks to Vasily Lobaskin <https://github.com/Liastre>
+
+
+Version 10.31.03 - Wed Nov  7 11:02:10 UTC 2018
+-----------------------------------------------
+
+* Fix issue #25
+
+
+Version 10.31.02 - Thu Nov  9 00:45:52 UTC 2017
+-----------------------------------------------
+
+* Fix bug #20 and #21
+
+
+Version 10.31.01 - Sun Aug 13 14:18:10 UTC 2017
+-----------------------------------------------
+
+* Remove explicit bit size from the selector: jpcre2::select
+* Add support for arbitrary map (std::map, std::unordered_map etc.) with jpcre2::select
+* Remove macro JPCRE2_DISABLE_CHAR1632
+* Remove macro JPCRE2_DISABLE_CODE_UNIT_WIDTH_VALIDATION
+* Remove ConvInt and ConvUTF (including Convert16 and Convert32)
+* Add perl compatible replace method: preplace()
+* Add macro JPCRE2_NDEBUG
+* Fix #19
+* Fix #17
+
+
+
+Version 10.30.02 - Mon Jul 10 14:04:27 UTC 2017
+-----------------------------------------------
+
+* Add `RegexReplace::getLastReplaceCount()`.
+* Add `RegexReplace::setReplaceCounter()`.
+* Add additional parameter `size_t* counter` to `MatchEvaluator::replace()` and `MatchEvaluator::nreplace()`
+* Optimize ModifierTable
+* Explicit bit size to the selector is deprecated
+* ConvInt and ConvUTF (including Convert16 and Convert32) is deprecated
+
+Version 10.30.01 - Sat Mar 11 00:08:52 UTC 2017
+-----------------------------------------------
+
+* API change.
+* Make `initMatch()`a synonym for `getMatchObject()`.
+* Make `initReplace()` a synonym for `getReplaceObject()`.
+* Improvement to `match()` function.
+* Different name for the same group is permitted (deviation from the PCRE2 spec 10.21):
+* Implement move constructors and move-assignment operator.
+* Guard against null pointer with well defined behavior.
+* Rename confusing name `setMatchData()` to `setMatchDataBlock()`.
+* Add `MatchEvaluator::resetMatchData()`
+* Add `clear()` functions to each class.
+* Remove `Regex::initMatchFrom()` and `Regex::initReplaceFrom()`.
+* Remove `Regex::match()` and `Regex::replace()` without any argument.
+* Add `ModifierTable` class for creating custom modifier tables.
+* PCRE2 compatible `replace()` function to take MatchEvaluator.
+* Match data re-usability by MatchEvaluator.
+
+
+Version 10.29.03 - Mon Mar  6 21:55:29 UTC 2017
+-----------------------------------------------
+
+1. Add ERROR constant INSUFFICIENT_OVECTOR
+2. Allow INSUFFICIENT_OVECTOR to be bypassed in `RegexMatch::match()` function.
+3. Add `MatchEvaluator::match()`, and `MatchEvaluator::nreplace()`
+4. Add `RegexMatch::getMatchStartOffsetVector()` and `RegexMatch::getMatchEndOffsetVector()`
+5. Add `MatchEvaluator::setMatchEvaluatorCallback()`
+6. Add an extra optional argument with `RegexReplace::nreplace()` to use existing match data.
+7. Add `MatchEvaluator::clearMatchData()` and `MatchEvaluator::reset()`
+8. Allow all `RegexMatch` member functions except functions that can set vector pointers in `MatchEvaluator` class.
+9. All chained methods of `RegexMatch` class are overridden to port the method chaining.
+10. `select` class construtor and destructor access specifier updated from `protected` to `private`.
+11. Add `MatchEvaluator` default constructor.
+12. Add `MatchEvaluator` constructor to that takes `const Regex*`.
+13. `initMatch()`, `getMatchObject()`, `initReplace()`, `getReplaceObject()` and their associates are deprecated
+
+
+Version 10.29.02 - Sat Mar  4 00:52:38 UTC 2017
+-----------------------------------------------
+
+* Fix unsafe use of pcre2_substring_free
+
+Version 10.29.01 - Tue Jan 24 21:41:29 UTC 2017
+-----------------------------------------------
+
+1. Removed `SUBSTITUTE_RESULT_INIT_SIZE` constant
+2. Add `JPCRE2_DISABLE_CHAR1632` to disable char16_t and char32_t support.
+4. Object instantiation of select class is prohibited.
+5. The behavior of shorthand `match()` and `replace()` function in the Regex class has changed. When they are called with no argument they will use previously set options, but when they are called with arguments, they will initiate a temporary match/replace object and will not use (or change) any previous options. This temporary object will not affect any class variables (i.e previously set option) and it won't be available after returning the result.
+6. `RegexMatch::match()` and `RegexReplace::replace()` function will no longer take any argument.
+7. Add `RegexReplace::setMatchContext()` and `RegexReplace::setMatchData()` function.
+8. Add `RegexMatch::setMatchContext()` function.
+9. MatchEvaluatorCallback function will use const reference of vectors.
+10. Fix MatchEvaluator for compatibility problem.
+11. Add `JPCRE2_USE_FUNCTION_POINTER_CALLBACK` macro.
+
+
+Version 10.28.12 - Sun Jan 22 10:34:35 UTC 2016
+-----------------------------------------------
+
+* Add match evaluator (close feature request #9)
+* Improve getter functions
+
+
+Version 10.28.11 - Mon Dec  5 09:58:35 UTC 2016
+-----------------------------------------------
+
+* Fix bug: Copy constructor of Regex class was performing an additional compilation even
+		when the to-be-copied code was null, thus producing a wrong copy.
+
+
+Version 10.28.09 - Sat Nov 19 13:16:37 UTC 2016
+-----------------------------------------------
+
+* For loop optimization (Thanks to David Carlier for noticing them.)
+
+Version 10.28.08 - Fri Nov 18 00:49:26 UTC 2016
+-----------------------------------------------
+
+* Added `setMatchStartOffsetVector()`
+* Added `setMatchEndOffsetVector()`
+* Added `resetCharacterTables()`
+* Added a #define to privide JPCRE2 version
+* Added a typedef `jpcre2::VecOff`
+* Removed `getEndOffset()`
+* Removed `setLocale()`, `getLocale()` and `getLocaleTypeId()`
+* Fixed a bug on Regex copy constructor (deleted character tables were being tried to be used).
+
+
+Version 10.28.07 - Tue Nov 15 19:50:34 UTC 2016
+-----------------------------------------------
+
+* Fix `toString(int)` function for `C++98`
+* Added a struct ConvInt
+* Added a struct ConvUTF
+
+Version 10.28.06 - Mon Nov 14 19:09:19 UTC 2016
+-----------------------------------------------
+
+* Fix memory leaks tracked by valgrind
+* Fix some minor bugs
+* Removed `jpcre2::ERROR::JIT_COMPILE_FAILED`
+* Added `initMatchFrom()` and `initReplaceFrom()`
+* Added `setNewLine()` and `getNewLine()`
+* Fix `setLocale()`
+* Added `getLocaleTypeId()`
+* `PCRE2_SUBSTITUTE_OVERFLOW_LENGTH` can now be overridden.
+* Overloads to pass subject, pattern and replacement strings with pointer.
+* Added `getSubjectPointer()`, `getPatternPointer()` and `getReplaceWithPointer()`
+
+
+Version 10.28.05 - Fri Nov 11 22:53:19 UTC 2016
+-----------------------------------------------
+
+* Start offset for matching. [Thanks to Kamil93](https://github.com/Kamil93)
+* A function `RegexMatch::getEndOffset()` to get the offset where last match ended. [Thanks to Kamil93](https://github.com/Kamil93)
+* Shortcut match function of `Regex` class will act the same way as the original match function from `RegexMatch` class.
+* Some overloads of `RegexMatch::match()` to make it same as its' shortcut `Regex::match()`.
+* Some overloads of `RegexReplace::replace()` to make it same as its' shortcut `Regex::replace()`.
+* Public constructor for `RegexMatch` i.e `RegexMatch` object creation is allowed.
+* Public constructor for `RegexReplace` i.e `RegexReplace` object creation is allowed.
+* Getter and setter for associating a Regex object with a `RegexMatch` or `RegexReplace` object.
+
+
+Version 10.28.04 - Thu Nov 10 17:14:50 UTC 2016
+-----------------------------------------------
+
+* fix multiple definition error (issue #10).
+* improve error handling.
+* used const char[] instead of const std::string.
+* removed LOCALE_NONE and LOCALE_DEFAULT constants.
+
+
+Version 10.28.03 - Mon Oct 31 22:24:29 UTC 2016
+-----------------------------------------------
+
+* Remove convert16 and convert32 global variable.
+* Add convert16 and convert32 typedefs.
+
+
+Version 10.28.02 - Mon Oct 31 21:00:32 UTC 2016
+-----------------------------------------------
+
+1. Remove PCRE2_CODE_UNIT_WIDTH quirks.
+2. Provide portable coding approach.
+3. Converted to header only library.
+
+
+Version 10.27.03 - Tue Oct 25 19:12:07 UTC 2016
+-----------------------------------------------
+
+* Fix multi code unit wdith support
+* Add example for handling multi code unit width
+
+Version 10.27.02 - Sat Sep 24 23:50:57 UTC 2016
+-----------------------------------------------
+
+* Fix issue #6 and #7
+
+Version 10.27.01 - Fri Sep 23 09:01:10 UTC 2016
+-----------------------------------------------
+
+* New API with 8 bit, 16 bit and 32 bit support
+* Add templated struct `jpcre2::select8` to select 8 bit code unit width
+* Add templated struct `jpcre2::select16` to select 16 bit code unit width
+* Add templated struct `jpcre2::select32` to select 32 bit code unit width
+* When using a single code unit width, corresponding struct can be used with `jpcre2::select` (without the suffix)
+* Support `char` (`std::string`), `wchar_t` (`std::wstring`), `char16_t` (`std::u16string`), `char32_t` (`std::u32string`)
+* `reset()` and `resetErrors()` can be called from anywhere in the method chain.
+
+
+Version 10.26.02 - Sun Sep 11 15:37:00 UTC 2016
+-----------------------------------------------
+
+* `Regex::match()` and its overloads will call `getMatchObject()` instead of `initMatch()`
+* `Regex::replace()` and its overloads will call `getReplaceObject()` instead of `initReplace()` 
+

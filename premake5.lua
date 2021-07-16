@@ -32,12 +32,18 @@ project "MYLE"
         "_CRT_SECURE_NO_WARNINGS"
     }
 
+    links 
+    {
+	"ThirdPart/pcre2/pcre3.dll"
+    }
+
     filter "system:windows"
         systemversion "latest"
 
         includedirs
         {
-            "%{prj.name}/include"
+            "%{prj.name}/include",
+	    "ThirdParty/jpcre2/src/"
         }
 
         defines
@@ -51,7 +57,8 @@ project "MYLE"
 
         sysincludedirs
         {
-            "%{prj.name}/include"
+            "%{prj.name}/include",
+	    "ThirdParty/jpcre2/src/"
         }
 
     filter "system:linux"
@@ -60,7 +67,8 @@ project "MYLE"
 
         sysincludedirs
         {
-            "%{prj.name}/include"
+            "%{prj.name}/include",
+	    "ThirdParty/jpcre2/src/"
         }
 
     filter "configurations:Debug"
